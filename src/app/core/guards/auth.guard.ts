@@ -12,8 +12,8 @@ export class AuthGuard implements CanActivate {
     name: string;
     password: string;
   } = {
-      name: "patrick",
-      password: "patrick"
+      name: "prueba",
+      password: "prueba"
     }
 
   public currentuser: any;
