@@ -1,0 +1,16 @@
+<div>
+  Lista de productos
+  <div *ngIf="!isLoading">
+    <ng-container *ngFor="let product of products;first as isFirst;last as isLast">
+      <div>
+        <h2 *ngIf="isFirst">**************</h2>
+        <p>{{product.title | uppercase}}</p>
+        <p>{{product.price | currency}}</p>
+        <h2 *ngIf="isLast">***************</h2>
+      </div>
+    </ng-container>
+  </div>
+  <div *ngIf="isLoading">
+    <p>Loading...</p>
+  </div>
+</div>

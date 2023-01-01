@@ -1,0 +1,23 @@
+<div>
+  <h1>LOG IN</h1>
+  <form [formGroup]="loginForm" (ngSubmit)="submit()">
+    <input type="text" placeholder="Ingresa tu usuario" formControlName="name">
+    <small *ngIf="this.loginForm.controls.name.errors && loginSubmitted">
+      <ng-container [ngSwitch]="this.loginForm.controls.name.value">
+        <ng-container *ngSwitchCase="''">El usuario es requerido</ng-container>
+        <ng-container *ngSwitchDefault>El usuario no es válido</ng-container>
+      </ng-container>
+    </small>
+    <input type="password" placeholder="Ingresa tu contraseña" formControlName="password">
+    <small *ngIf="this.loginForm.controls.password.errors && loginSubmitted">
+      <ng-container [ngSwitch]="this.loginForm.controls.password.value">
+        <ng-container *ngSwitchCase="''">La contraseña es requerida</ng-container>
+        <ng-container *ngSwitchDefault>La contraseña no es válida</ng-container>
+      </ng-container>
+    </small>
+    <div>
+      <button type="submit">Log in</button>
+      <button>Cancelar</button>
+    </div>
+  </form>
+</div>

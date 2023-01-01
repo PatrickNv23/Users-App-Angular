@@ -1,0 +1,12 @@
+<div>
+  Lista de productos
+  <button (click)="getAllProducts()">Get All Products</button>
+  <div *ngIf="thereaAreProducts">
+    <ng-container *ngFor="let product of products">
+      <div>
+        <p>{{product.title | uppercase}}</p>
+        <p>{{product.price | currency}}</p>
+      </div>
+    </ng-container>
+  </div>
+</div>
